@@ -6,7 +6,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-    default: WATSON-XD-V7,
+    default: Maher_Zubair,
     useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
@@ -20,13 +20,13 @@ function removeFile(FilePath){
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-        async function WATSON-XD_PAIR_CODE() {
+        async function SIGMA_MD_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_WATSON-XD-V7 = WATSON-XD-V7({
+            let Pair_Code_By_Maher_Zubair = Maher_Zubair({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -35,16 +35,16 @@ router.get('/', async (req, res) => {
                 logger: pino({level: "fatal"}).child({level: "fatal"}),
                 browser: ["Chrome (Linux)", "", ""]
              });
-             if(!Pair_Code_By_WATSON-XD-V7.authState.creds.registered) {
+             if(!Pair_Code_By_Maher_Zubair.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_WATSON-XD-V7.requestPairingCode(num)
+                            const code = await Pair_Code_By_Maher_Zubair.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Code_By_WATSON-XD-V7.ev.on('creds.update', saveCreds)
-            Pair_Code_By_WATSON-XD-V7.ev.on("connection.update", async (s) => {
+            Pair_Code_By_Maher_Zubair.ev.on('creds.update', saveCreds)
+            Pair_Code_By_Maher_Zubair.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -54,37 +54,35 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(800);
                let b64data = Buffer.from(data).toString('base64');
-               let session = await Pair_Code_By_WATSON-XD-V7.sendMessage(Pair_Code_By_WATSON-XD-V7.user.id, { text: '' + b64data });
+               let session = await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id, { text: "" + b64data });
 
-               let WATSON-XD-V7_TEXT = `
-*_Pair Code Connected by WATSON-MD-V7*
-*_Made With 🤍_*
-______________________________________
-╔════◇
-║ *『 WOW YOU CHOOSEN WATSON-MD-V7 』*
-║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
-╚══════════════════════╝
-╔═════◇
-║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Ytube:* _youtube.com/@WATSON-TECH_
-║❒ *Owner:* _https://wa.me/message/263781330745_
-║❒ *Repo:* https://github.com/WATSON-XD2/Watson-MD-Bot-V7_
-║❒ *WaGroup:* https://chat.whatsapp.com/E0a2bl9wHYlCHuL35WBR88_
-║❒ *WaChannel:* https://whatsapp.com/channel/0029VajjzuB9sBI890YffB1b
-║❒ *Plugins:* https://github.com/WATSON-XD2/Watson-MD-Bot-V7-plugins_
-╚══════════════════════╝ 
-_____________________________________
-
-_Don't Forget To Give Star To My Repo_`
- await Pair_Code_By_WATSON-XD-V7.sendMessage(Pair_Code_By_WATSON-XD-V7.user.id,{text:WATSON-XD-V7_TEXT},{quoted:session})
+               let SIGMA_MD_TEXT = `
+*┏━━━━━━━━━━━━━━*
+*┃𝗪𝗔𝗧𝗦𝗢𝗡-XD-7 SESSION IS*
+*┃SUCCESSFULLY*
+*┃CONNECTED ✅🔥*
+*┗━━━━━━━━━━━━━━━*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+*❶ || Creator = RomekTricks Official👨🏻‍💻*
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+*❷ || WhatsApp Channel =* https://whatsapp.com/channel/0029VajjzuB9sBI890YffB1b
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+*❸ || Owner =* https://wa.me/+263781330745
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+*❹ || Repo =* https://github.com/WATSON-XD2/Watson-MD-Bot-V7
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+*❺ || You Tube =* https://youtube.com/@
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+*🧚‍♀️ᴄʀᴇᴀᴛᴇᴅ ʙʏ ©𝘄𝗮𝘁𝘀𝗼𝗻-xd-v7 ᴏꜰꜰɪᴄɪᴀʟ💗*
+ await Pair_Code_By_Maher_Zubair.sendMessage(Pair_Code_By_Maher_Zubair.user.id,{text:SIGMA_MD_TEXT},{quoted:session})
  
 
         await delay(100);
-        await Pair_Code_By_WATSON-XD-V7.ws.close();
+        await Pair_Code_By_Maher_Zubair.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    WATSON-XD-V7_PAIR_CODE();
+                    SIGMA_MD_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -95,6 +93,6 @@ _Don't Forget To Give Star To My Repo_`
          }
         }
     }
-    return await WATSON-XD-V7_PAIR_CODE()
+    return await SIGMA_MD_PAIR_CODE()
 });
 module.exports = router
